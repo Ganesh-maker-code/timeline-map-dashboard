@@ -56,3 +56,5 @@ Limitations: Automatic updates for existing polygons, dual-ended range slider, a
 Deployment: The app is deployed on Netlify, accessible via the provided URL. Instructions above allow local testing and building.
 
 Future Improvements: Adding range mode to the slider, switching to the archive API, and enabling automatic polygon updates would enhance the app.
+<img width="1920" height="1020" alt="Screenshot 2025-08-05 090154" src="https://github.com/user-attachments/assets/35a61b68-367f-4cda-8446-70895d28cf82" />
+<img width="1920" height="1020" alt="Screenshot 2025-08-05 085943" src="https://github.com/user-attachments/assets/37446bb9-6803-45a6-bc2f-272b1c66f520" />
