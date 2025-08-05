@@ -3,19 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.126",
-    "@types/react": "^19.1.9",
-    "@types/react-dom": "^19.1.7",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "@types/moment": "^2.11.29",
+    "axios": "^1.7.2",
+    "leaflet": "^1.9.4",
+    "leaflet-draw": "^1.0.4",
+    "moment": "^2.30.1",
+    "rc-slider": "^10.6.2",
+    "rc-util": "^5.41.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1",
+    "react-scripts": "^5.0.1",
+    "react-slider": "^2.0.6",
+    "web-vitals": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,5 +41,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.4",
+    "@types/jest": "^30.0.0",
+    "@types/leaflet": "^1.9.20",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7"
   }
 }

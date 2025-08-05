@@ -1,9 +1,10 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import App from "./App";
+import "@testing-library/jest-dom"; // Import jest-dom matchers
 
-test('renders learn react link', () => {
+test("renders map dashboard", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByText(/map dashboard/i);
   expect(linkElement).toBeInTheDocument();
 });

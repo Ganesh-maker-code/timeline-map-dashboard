@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# Timeline Map Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the **Timeline Map Dashboard**, a React-based web application that visualizes temperature data on an interactive map. Users can draw polygons to define spatial regions, adjust a timeline slider to view hourly data, and apply color-coded displays based on user-defined temperature thresholds. This project was developed as part of a task submission and includes partial implementation due to time constraints.
 
-## Available Scripts
+## Setup and Run Instructions
 
-In the project directory, you can run:
+To set up and run this application on your local machine, follow these steps carefully:
 
-### `npm start`
+1. **Prerequisites**:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+   - Ensure you have **Node.js** installed, higher version recommended
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. **Clone the Repository**:
+   - Clone this repository to your local machine
+     Navigate to the project directory: cd timeline-map-dashboard
+3. Install Dependencies:
+   Run the following command to install all required packages: npm install
+4. Start the Development Server:
+   Launch the application with: npm start
 
-### `npm test`
+## APIs and Credentials
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This application uses the Open-Meteo API to fetch hourly temperature data based on user-drawn polygon locations. The API is publicly available and does not require API keys or credentials. You can access it directly at api.open-meteo.com or the archive endpoint archive-api.open-meteo.com.
+No Credentials Needed: Since Open-Meteo is free and public, no registration or API key is required. Simply use the endpoint with latitude, longitude, and date parameters as shown.
 
-### `npm run build`
+If you wish to explore additional data sources or APIs requiring credentials (e.g., for bonus features), you would need to:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Sign up on the respective API provider’s website (e.g., OpenWeatherMap).
+Obtain an API key from their dashboard.
+Store the key in a .env file (e.g., REACT_APP_API_KEY=your_key_here) and access it via process.env.REACT_APP_API_KEY in your code.
+Ensure the .env file is added to .gitignore to prevent committing it.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Summary of Libraries Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project relies on the following libraries:
 
-### `npm run eject`
+React: 18.3.1 - The core JavaScript library for building user interfaces.
+TypeScript: For type safety and enhanced development experience.
+react-leaflet: 4.2.1 - A React wrapper for Leaflet, used for the interactive map.
+leaflet: The underlying mapping library for rendering maps and polygons.
+leaflet-draw: Adds polygon drawing capabilities to the map.
+axios: A promise-based HTTP client for making API requests to Open-Meteo.
+react-slider: 2.0.6 - Provides the timeline slider for selecting hours.
+Context API: Built-in React feature for state management across components.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Remarks on Design and Development
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Core Functionality: The dashboard features a Leaflet map where users can draw polygons (3-12 points) to define regions. Temperature data is fetched from the Open-Meteo API based on the polygon’s centroid and the selected hour from the slider.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Timeline Slider: Currently supports a single day (0-23 hours) due to time constraints. The task required a 30-day window (15 days before and after August 04, 2025), but this feature is incomplete.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Color Coding: Polygons are colored based on user-defined thresholds (e.g., red < 10°C, blue 10-25°C, green > 25°C), updated manually via a button.
 
-## Learn More
+Limitations: Automatic updates for existing polygons, dual-ended range slider, and full 30-day timeline support are not implemented. The Open-Meteo API endpoint used is https://api.open-meteo.com/v1/forecast instead of the required archive-api due to initial setup.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Deployment: The app is deployed on Netlify, accessible via the provided URL. Instructions above allow local testing and building.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Future Improvements: Adding range mode to the slider, switching to the archive API, and enabling automatic polygon updates would enhance the app.
